@@ -1,0 +1,26 @@
+{
+  "name": "did-the-phillies-win",
+  "version": "1.0.0",
+  "description": "Twitter Bot tweeting updates for each game",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "twitter-api-v2": "^1.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffreyjgong/did-the-phillies-win.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffreyjgong/did-the-phillies-win/issues"
+  },
+  "homepage": "https://github.com/jeffreyjgong/did-the-phillies-win#readme"
+}
