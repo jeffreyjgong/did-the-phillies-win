@@ -12,16 +12,5 @@ const client = new TwitterApi({
 
 const rwClient = client.readWrite;
 
-const tweet = async () => {
-   try {
-      await client.v2.tweet("hello");
-      console.log("Just tweeted!");
-   } catch (e) {
-      console.error(e);
-   }
-};
-
-tweet();
-
 module.exports = rwClient;
 
