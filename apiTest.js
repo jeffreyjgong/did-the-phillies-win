@@ -7,7 +7,7 @@ let config = {
       "X-RapidAPI-Key": process.env.RAPID_API_KEY
    },
    params: {
-      daysFrom: 1
+      daysFrom: 2
    }
 }
 
@@ -17,12 +17,23 @@ axios.get('https://odds.p.rapidapi.com/v4/sports/baseball_mlb/scores', config).t
    });
 
    if (Array.isArray(phillies_results) && phillies_results.length) {
-      
+      phillies_results.forEach((element, index, array) => {
+         let p_score = element.scores.filter(obj => {
+            return (obj.name === 'Philadelphia Phillies')
+         })[0].score;
+         let o_score = element.scores.filter(obj => {
+            return (obj.name != 'Philadelphia Phillies')
+         })[0].score;
+         console.log("Phillies:", p_score, "Opponent:", o_score);
+         if (p_score > o_score) {
+            console.log("Hallelujah, Phillies finally fucking win!")
+         } else {
+            console.log("What did you expect, of course they fucking lost you stupid ass bitch.");
+         }
+      });
    } else {
-      console.log("No Phillies games.")
+      console.log("No Phillies games.");
    }
-   console.log(phillies_results);
 }).catch(error => {
-   console.log('Error status', error.response.status);
-   console.log(error.response.data);
+   console.error(error);
 })
